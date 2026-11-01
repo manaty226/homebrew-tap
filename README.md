@@ -1,14 +1,29 @@
-# Fude
+# Homebrew Tap
 
-RustとGPUIで作られたmacOS向けコードエディタ、Fudeの配布リポジトリです。
+manaty226が配布するアプリやツールをHomebrewからインストールするための公開Tapです。
 
-## Homebrewからインストール
+## Tapを追加
 
 [Homebrew](https://brew.sh/)をインストールしたMacで、次を実行してください。
 
 ```sh
-brew tap manaty226/fude-release https://github.com/manaty226/fude-release.git
-brew install --cask manaty226/fude-release/fude
+brew tap manaty226/tap
+```
+
+## 配布中のアプリ
+
+| Cask | 内容 | インストール |
+| --- | --- | --- |
+| [Fude](#fude) | RustとGPUIで作られたmacOS向けコードエディタ | `brew install --cask manaty226/tap/fude` |
+
+## Fude
+
+### インストール
+
+Tapを追加済みの場合は、次を実行してください。
+
+```sh
+brew install --cask manaty226/tap/fude
 ```
 
 アプリケーションフォルダに `Fude.app` がインストールされます。Finderから開くか、次を実行します。
@@ -19,24 +34,24 @@ open -a Fude
 
 手動でインストールしたFudeが既にある場合は、そのアプリを終了して別の場所へ移動してから、Homebrewでインストールしてください。
 
-## 更新
+### 更新
 
 ```sh
 brew update
-brew upgrade --cask manaty226/fude-release/fude
+brew upgrade --cask manaty226/tap/fude
 ```
 
-## アンインストール
+### アンインストール
 
 ```sh
-brew uninstall --cask manaty226/fude-release/fude
+brew uninstall --cask manaty226/tap/fude
 ```
 
 アプリの設定やワークスペース情報は削除しません。
 
-## 直接ダウンロード
+### 直接ダウンロード
 
-[Releases](https://github.com/manaty226/fude-release/releases)から `Fude-<version>-<build>-macos-universal.zip` をダウンロードし、展開した `Fude.app` をアプリケーションフォルダへ移動してください。
+[Releases](https://github.com/manaty226/homebrew-tap/releases)から `Fude-<version>-<build>-macos-universal.zip` をダウンロードし、展開した `Fude.app` をアプリケーションフォルダへ移動してください。
 
 配布アプリはDeveloper ID署名・Appleの公証済みです。各ReleaseにSHA-256チェックサムを添付しています。ZIPと `.sha256` ファイルを同じフォルダに保存すると、次の形式で確認できます。
 
@@ -44,7 +59,7 @@ brew uninstall --cask manaty226/fude-release/fude
 shasum -a 256 -c Fude-0.1.0-2-macos-universal.zip.sha256
 ```
 
-## 対応環境
+### 対応環境
 
 - macOS向け。ビルド上の最低バージョンはmacOS 13 Venturaです。
 - Apple SiliconとIntelを含むUniversal Binaryです。
@@ -52,7 +67,17 @@ shasum -a 256 -c Fude-0.1.0-2-macos-universal.zip.sha256
 
 ## このリポジトリについて
 
-配布用ZIPはGitHub Releases、Homebrew Cask定義は [`Casks/fude.rb`](Casks/fude.rb) に置いています。
+配布用ZIPはGitHub Releases、Homebrew Cask定義は `Casks/` に置いています。Fudeの定義は [`Casks/fude.rb`](Casks/fude.rb) です。
 アプリのソースコードはこのリポジトリに含みません。
 
-リポジトリ名が `homebrew-` で始まらないため、初回の `brew tap` では上記のURLも指定してください。
+### 以前のTapから移行する場合
+
+`manaty226/fude-release` からFudeをインストール済みの場合は、次を実行してください。
+
+```sh
+brew tap manaty226/tap
+brew reinstall --cask manaty226/tap/fude
+brew untap manaty226/fude-release
+```
+
+まだインストールしていない場合は、通常のインストール手順を使ってください。
