@@ -7,6 +7,19 @@ cask "fude" do
   desc "Native code editor built with Rust and GPUI"
   homepage "https://github.com/manaty226/fude-release"
 
+  livecheck do
+    url :url
+    regex(/^Fude[._-]v?(\d+(?:\.\d+)+)[._-](\d+)[._-]macos-universal\.zip$/i)
+    strategy :github_latest do |json, regex|
+      json["assets"]&.filter_map do |asset|
+        match = asset["name"]&.match(regex)
+        next if match.blank?
+
+        "#{match[1]},#{match[2]}"
+      end
+    end
+  end
+
   depends_on macos: :ventura
 
   app "Fude.app"
