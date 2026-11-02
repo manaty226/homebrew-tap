@@ -56,7 +56,7 @@ brew uninstall --cask manaty226/tap/fude
 配布アプリはDeveloper ID署名・Appleの公証済みです。各ReleaseにSHA-256チェックサムを添付しています。ZIPと `.sha256` ファイルを同じフォルダに保存すると、次の形式で確認できます。
 
 ```sh
-shasum -a 256 -c Fude-0.1.0-2-macos-universal.zip.sha256
+shasum -a 256 -c Fude-0.1.2-4-macos-universal.zip.sha256
 ```
 
 ### 対応環境

@@ -1,6 +1,6 @@
 cask "fude" do
-  version "0.1.1,3"
-  sha256 "b81f576620c84e7894a590411b9102b931fd6a296e2b1c4587db36344368f492"
+  version "0.1.2,4"
+  sha256 "4b9d4a761c6ba8affdb581b79ecf54d42947bc087a8eaae553aa20ca3c2df90b"
 
   url "https://github.com/manaty226/homebrew-tap/releases/download/v#{version.csv.first}/Fude-#{version.csv.first}-#{version.csv.second}-macos-universal.zip"
   name "Fude"
