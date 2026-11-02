@@ -1,15 +1,24 @@
 cask "fude" do
-  version "0.1.2,4"
-  sha256 "4b9d4a761c6ba8affdb581b79ecf54d42947bc087a8eaae553aa20ca3c2df90b"
+  on_arm do
+    version "0.1.3,5"
+    sha256 "b993589ba6d0c60a9ef304b372eb478c13d92e513c58426a97d1a3fc4eba6bca"
 
-  url "https://github.com/manaty226/homebrew-tap/releases/download/v#{version.csv.first}/Fude-#{version.csv.first}-#{version.csv.second}-macos-universal.zip"
+    url "https://github.com/manaty226/homebrew-tap/releases/download/v#{version.csv.first}/Fude-#{version.csv.first}-#{version.csv.second}-macos-arm64.zip"
+  end
+  on_intel do
+    version "0.1.2,4"
+    sha256 "4b9d4a761c6ba8affdb581b79ecf54d42947bc087a8eaae553aa20ca3c2df90b"
+
+    url "https://github.com/manaty226/homebrew-tap/releases/download/v#{version.csv.first}/Fude-#{version.csv.first}-#{version.csv.second}-macos-universal.zip"
+  end
+
   name "Fude"
   desc "Native code editor built with Rust and GPUI"
   homepage "https://github.com/manaty226/homebrew-tap#fude"
 
   livecheck do
     url :url
-    regex(/^Fude[._-]v?(\d+(?:\.\d+)+)[._-](\d+)[._-]macos-universal\.zip$/i)
+    regex(/^Fude[._-]v?(\d+(?:\.\d+)+)[._-](\d+)[._-]macos-(?:universal|arm64)\.zip$/i)
     strategy :github_releases do |json, regex|
       json.flat_map do |release|
         next [] if release["draft"] || release["prerelease"]
