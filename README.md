@@ -51,18 +51,18 @@ brew uninstall --cask manaty226/tap/fude
 
 ### 直接ダウンロード
 
-[Releases](https://github.com/manaty226/homebrew-tap/releases)から `Fude-<version>-<build>-macos-universal.zip` をダウンロードし、展開した `Fude.app` をアプリケーションフォルダへ移動してください。
+[Releases](https://github.com/manaty226/homebrew-tap/releases)から `Fude-<version>-<build>-macos-arm64.zip` をダウンロードし、展開した `Fude.app` をアプリケーションフォルダへ移動してください。
 
 配布アプリはDeveloper ID署名・Appleの公証済みです。各ReleaseにSHA-256チェックサムを添付しています。ZIPと `.sha256` ファイルを同じフォルダに保存すると、次の形式で確認できます。
 
 ```sh
-shasum -a 256 -c Fude-0.1.2-4-macos-universal.zip.sha256
+shasum -a 256 -c Fude-0.1.4-6-macos-arm64.zip.sha256
 ```
 
 ### 対応環境
 
 - macOS向け。ビルド上の最低バージョンはmacOS 13 Venturaです。
-- Apple SiliconとIntelを含むUniversal Binaryです。
+- 最新版はApple Silicon向けです。Intel Macでは公証済みの0.1.2（Universal Binary）を引き続き配布します。
 - 言語サーバー、各言語のSDK、外部AI CLIは別途用意してください。
 
 ## このリポジトリについて
