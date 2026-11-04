@@ -32,7 +32,7 @@ brew install --cask manaty226/tap/fude
 open -a Fude
 ```
 
-Apple Silicon向けの最新版には `fude` CLIも付属します。`fude --help` からタスク・スケジュール・サンドボックスの操作を確認できます。
+Apple Silicon向けの最新版には `fude` CLIも付属します。`fude --help` からタスク・実行目標・スケジュール・サンドボックスの操作を確認できます。
 GUIで作業フォルダを開く場合は `fude --path /path/to/project` を実行します。
 
 手動でインストールしたFudeが既にある場合は、そのアプリを終了して別の場所へ移動してから、Homebrewでインストールしてください。
@@ -59,7 +59,7 @@ brew uninstall --cask manaty226/tap/fude
 配布アプリはDeveloper ID署名・Appleの公証済みです。各ReleaseにSHA-256チェックサムを添付しています。ZIPと `.sha256` ファイルを同じフォルダに保存すると、次の形式で確認できます。
 
 ```sh
-shasum -a 256 -c Fude-0.1.18-20-macos-arm64.zip.sha256
+shasum -a 256 -c Fude-0.1.20-22-macos-arm64.zip.sha256
 ```
 
 ### 対応環境
