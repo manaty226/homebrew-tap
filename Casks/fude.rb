@@ -1,7 +1,7 @@
 cask "fude" do
   on_arm do
-    version "0.2.3,84"
-    sha256 "6d510efee652b376ff7a1d501c9fde19c09be2211afa38fca3b0a9ca6be7f4ce"
+    version "0.2.4,85"
+    sha256 "f5a317193af261e84a522ec1221b59739f0f4e35ef40064c9d4cd2a5014644cb"
 
     url "https://github.com/manaty226/homebrew-tap/releases/download/v#{version.csv.first}/Fude-#{version.csv.first}-#{version.csv.second}-macos-arm64.zip"
 
